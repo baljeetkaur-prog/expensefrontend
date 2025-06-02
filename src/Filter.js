@@ -11,7 +11,7 @@ function Filter() {
     const [load, setload] = useState(false);
     const fetchfilterdata = async () => {
         try {
-            const apiresp = await axios.get("http://localhost:9000/api/fetchallexpenses");
+            const apiresp = await axios.get(`https://expensebackend-cp68.onrender.com/api/fetchallexpenses`);
             if (apiresp.status >= 200 && apiresp.status < 300) {
                 let data = apiresp.data.data;
                 if (category) {
