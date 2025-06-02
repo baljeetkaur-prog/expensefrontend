@@ -7,7 +7,7 @@ export const ExpenseProvider=({children})=>{
     {
         try
         {
-            const apiresp=await axios.get("http://localhost:9000/api/fetchallexpenses")
+            const apiresp=await axios.get(`https://expensebackend-cp68.onrender.com/api/fetchallexpenses`)
             setexpenses(apiresp.data.data); 
         }
         catch(e)
