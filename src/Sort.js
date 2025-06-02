@@ -9,7 +9,7 @@ function Sort() {
     const [sortedexp, setsortedexp] = useState([]);
     const sortexpenses = async () => {
         try {
-            const apiresp = await axios.get(`http://localhost:9000/api/sortexpenses?field=${sfield}&order=${sorder}`)
+            const apiresp = await axios.get(`https://expensebackend-cp68.onrender.com/api/sortexpenses?field=${sfield}&order=${sorder}`)
             if (apiresp.status >= 200 && apiresp.status < 300) {
                 setsortedexp(apiresp.data.data);
             }
