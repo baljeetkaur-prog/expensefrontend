@@ -21,7 +21,7 @@ function Mainexp(){
       const apidata = { expense, amount, cat, date };
       try {
         if (editmode) {
-          const apiresp = await axios.put(`http://localhost:9000/api/updateexpense/${editid}`, apidata);
+          const apiresp = await axios.put(`https://expensebackend-cp68.onrender.com/api/updateexpense/${editid}`, apidata);
           if (apiresp.status >= 200 && apiresp.status < 300) {
             if (apiresp.data.success === true) {
               toast.success("Expense updated successfully");
@@ -50,7 +50,7 @@ function Mainexp(){
     };
     const fetchallexpenses = async () => {
       try {
-        const apiresp = await axios.get("http://localhost:9000/api/fetchallexpenses");
+        const apiresp = await axios.get(`https://expensebackend-cp68.onrender.com/api/fetchallexpenses`);
         if (apiresp.status >= 200 && apiresp.status < 300) {
           const data = apiresp.data.data
           setallexpenses(data);
@@ -78,7 +78,7 @@ function Mainexp(){
       try {
         const uchoice = window.confirm(`Are you sure to delele the expense ${expense}`)
         if (uchoice) {
-          const apiresp = await axios.delete(`http://localhost:9000/api/delexpense/${id}`);
+          const apiresp = await axios.delete(`https://expensebackend-cp68.onrender.com/api/delexpense/${id}`);
           if (apiresp.status >= 200 && apiresp.status < 300) {
             if (apiresp.data.success === true) {
               toast.success("Expense Deleted Successfully")
